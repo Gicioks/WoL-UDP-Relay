@@ -2,6 +2,63 @@
 
 This service listens for Wake-on-LAN (WoL) magic packets on UDP port 9 and rebroadcasts them to the correct subnet broadcast address based on the target device's MAC address.
 
+## Requirements
+
+### Operating System
+
+- Linux system with `systemd`
+- Tested on Raspberry Pi OS and Ubuntu Server
+- Root (`sudo`) access required for installation
+
+### Software
+
+The following packages must be available:
+
+```bash
+python3 --version
+systemctl --version
+```
+
+Required:
+
+- Python 3.10 or newer
+- systemd
+- Standard Python libraries only (no external dependencies)
+
+### Network
+
+The host running the relay must:
+
+- Have network access to the target VLANs/subnets where WoL packets will be broadcast.
+- Be allowed to send UDP broadcasts to the target subnet broadcast addresses.
+- Be reachable on UDP port 9 from the source of Wake-on-LAN requests.
+
+### Firewall
+
+If a firewall is enabled, allow inbound UDP port 9:
+
+```bash
+sudo ufw allow 9/udp
+```
+
+### Example Deployment
+
+```text
+Internet/VPN
+      │
+      ▼
+UDP Port 9
+      │
+      ▼
+Raspberry Pi / Linux Host
+      │
+      ├── VLAN 10 → 192.168.10.255
+      ├── VLAN 20 → 192.168.20.255
+      └── VLAN 30 → 192.168.30.255
+```
+
+The relay receives Wake-on-LAN magic packets and rebroadcasts them to the appropriate subnet based on the configured MAC address mappings.
+
 ## Install
 
 Run:
