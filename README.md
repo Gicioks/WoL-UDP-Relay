@@ -1,4 +1,4 @@
-# WoL-UDP-Relay
+# WoL UDP Relay
 
 This service listens for Wake-on-LAN (WoL) magic packets on UDP port 9 and rebroadcasts them to the correct subnet broadcast address based on the target device's MAC address.
 
