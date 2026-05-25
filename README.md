@@ -7,7 +7,6 @@ This service listens for Wake-on-LAN (WoL) magic packets on UDP port 9 and rebro
 Run:
 
 ```bash
-cd wol-relay
 chmod +x install.sh
 ./install.sh
 ```
