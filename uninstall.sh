@@ -26,7 +26,7 @@ if [[ "$REMOVE_CONFIG" =~ ^[Yy]$ ]]; then
 else
     echo "Preserving configuration..."
 
-    rm -f "$INSTALL_DIR/wol-relay.py"
+    rm -f "$INSTALL_DIR/wol-udp-relay.py"
 
     # Remove directory only if empty
     rmdir "$INSTALL_DIR" 2>/dev/null || true

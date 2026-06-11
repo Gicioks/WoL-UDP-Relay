@@ -6,7 +6,7 @@ Wants=network-online.target
 [Service]
 Type=simple
 WorkingDirectory=__INSTALL_DIR__
-ExecStart=/usr/bin/python3 -u __INSTALL_DIR__/wol-relay.py
+ExecStart=/usr/bin/python3 -u __INSTALL_DIR__/wol-udp-relay.py
 Restart=always
 RestartSec=1
 User=root
