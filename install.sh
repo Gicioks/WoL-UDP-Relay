@@ -15,7 +15,7 @@ else
     cp "$SCRIPT_DIR/wol-relay.json" "$INSTALL_DIR/"
 fi
 
-chmod +x "$INSTALL_DIR/wol-relay.py"
+chmod +x "$INSTALL_DIR/wol-udp-relay.py"
 
 echo "Installing systemd service..."
 
