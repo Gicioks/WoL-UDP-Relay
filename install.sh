@@ -16,7 +16,7 @@ chmod +x "$INSTALL_DIR/wol-relay.py"
 echo "Installing systemd service..."
 
 sed "s|__INSTALL_DIR__|$INSTALL_DIR|g" \
-    "$SCRIPT_DIR/service/wol-udp-relay.service" | \
+    "$SCRIPT_DIR/wol-udp-relay.service" | \
     sudo tee /etc/systemd/system/wol-udp-relay.service >/dev/null
 
 sudo systemctl daemon-reload
