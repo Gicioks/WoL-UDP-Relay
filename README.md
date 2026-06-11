@@ -71,22 +71,22 @@ chmod +x install.sh
 The installer will:
 
 - Create `~/wol-relay`
-- Install `wol-relay.py`
+- Install `wol-udp-relay.py`
 - Copy example config `wol-relay.json`
-- Create the `wol-relay.service` systemd service
+- Create the `wol-udp-relay.service` systemd service
 - Enable automatic startup
 - Start the service
 
 Verify operation:
 
 ```bash
-systemctl status wol-relay.service
+systemctl status wol-udp-relay.service
 ```
 
 View logs:
 
 ```bash
-journalctl -u wol-relay.service -f
+journalctl -u wol-udp-relay.service -f
 ```
 
 ## Uninstall
