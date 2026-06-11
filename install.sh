@@ -9,7 +9,11 @@ mkdir -p "$INSTALL_DIR"
 
 echo "Copying application files..."
 cp "$SCRIPT_DIR/wol-udp-relay.py" "$INSTALL_DIR/"
-cp "$SCRIPT_DIR/wol-relay.json" "$INSTALL_DIR/"
+if [ -f "$INSTALL_DIR/wol-relay.json" ]; then
+    echo "Config wol-relay.json already exists, keeping it."
+else
+    cp "$SCRIPT_DIR/wol-relay.json" "$INSTALL_DIR/"
+fi
 
 chmod +x "$INSTALL_DIR/wol-relay.py"
 
